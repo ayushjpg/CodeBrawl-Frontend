@@ -1042,7 +1042,7 @@ int main() {
                 return;
             }
 
-            const socket = new SockJS(`https://room-service-latest.onrender.com/ws?username=${encodeURIComponent(currentUsername)}&authorization=Bearer%20${encodeURIComponent(jwtToken)}`);
+            const socket = new SockJS(`https://codebrawl-room.up.railway.app/ws?username=${encodeURIComponent(currentUsername)}&authorization=Bearer%20${encodeURIComponent(jwtToken)}`);
             stompClient = Stomp.over(socket);
 
             const headers = {
@@ -1205,7 +1205,7 @@ int main() {
             if (!currentUsername || !jwtToken) return;
 
             try {
-                const response = await fetch(`https://room-service-latest.onrender.com/match/start/${encodeURIComponent(currentUsername)}`, {
+                const response = await fetch(`https://codebrawl-room.up.railway.app/match/start/${encodeURIComponent(currentUsername)}`, {
                     method: "POST",
                     headers: {
                         'Authorization': `Bearer ${jwtToken}`,
@@ -1236,7 +1236,7 @@ int main() {
             };
 
             try {
-                const response = await fetch('https://room-service-latest.onrender.com/submission', {
+                const response = await fetch('https://codebrawl-room.up.railway.app/submission', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
